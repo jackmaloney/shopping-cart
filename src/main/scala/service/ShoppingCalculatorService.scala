@@ -5,7 +5,7 @@ import main.domain.Item
 /**
   * Created by Jack on 22/03/2017.
   */
-class ShoppingCalculatorService {
+object ShoppingCalculatorService {
 
   def calculateBasketTotal(items: List[Item]): BigDecimal = {
     items.foldLeft(BigDecimal(0.0)) { (total, i) =>
