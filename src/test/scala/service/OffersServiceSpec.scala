@@ -1,5 +1,6 @@
 package service
 
+import main.domain.{Apple, Orange}
 import org.specs2.mutable.Specification
 
 class OffersServiceSpec extends Specification {
@@ -39,6 +40,21 @@ class OffersServiceSpec extends Specification {
 
     "give no items for free when one of the same item" in {
       offersService.threeForThePriceOfTwo(1, BigDecimal(20)) mustEqual BigDecimal(20)
+    }
+  }
+
+  "applyOffers" should {
+    "apply the buyOneGetOneFreeOffer for applicable items in the shopping basket and give an updated price" in {
+      val items = List(Apple, Apple, Orange, Apple)
+
+      offersService.applyOffers(items) mustEqual BigDecimal(1.45)
+    }
+
+    "apply the threeForThePriceOfTwo for applicable items in the shopping basket and give an updated price" in {
+      val items = List(Orange, Orange, Orange, Apple)
+
+      offersService.applyOffers(items) mustEqual BigDecimal(1.10)
+
     }
   }
 }
