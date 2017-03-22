@@ -6,7 +6,8 @@ abstract class Item {
 
   def name: String
   def price: BigDecimal
-  def offers: List[Offer]
+  def offer: Option[Offer]
+
 }
 
 //In real life the prices would be read in from config
@@ -16,7 +17,7 @@ case object Apple extends Item {
 
   override def price = BigDecimal(0.60)
 
-  override def offers = List(BuyOneGetOneFreeOffer)
+  override def offer = Some(BuyOneGetOneFreeOffer)
 }
 
 case object Orange extends Item {
@@ -25,5 +26,7 @@ case object Orange extends Item {
 
   override def price = BigDecimal(0.25)
 
-  override def offers = List(ThreeForPriceOfTwoOffer)
+  override def offer = Some(ThreeForPriceOfTwoOffer)
+
+
 }
