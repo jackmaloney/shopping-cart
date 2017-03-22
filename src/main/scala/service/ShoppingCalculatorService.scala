@@ -8,7 +8,9 @@ import main.domain.Item
 class ShoppingCalculatorService {
 
   def calculateBasketTotal(items: List[Item]): BigDecimal = {
-
+    items.foldLeft(BigDecimal(0.0)) { (total, i) =>
+      total + i.price
+    }
   }
 
 }
