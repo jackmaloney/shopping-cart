@@ -11,11 +11,11 @@ class ShoppingCalculatorServiceSpec extends Specification {
   "Shopping calculator" should {
 
     "Return the price one item when only one in shopping basket" in {
-      shoppingCalculatorService.calculateBasketTotal(List(Apple)) mustEqual BigDecimal("0.60")
+      shoppingCalculatorService.calculateBasketTotal(List(Apple)) mustEqual BigDecimal(0.60)
     }
 
     "Add the total price of items in the shopping basket for multiple items" in {
-      shoppingCalculatorService.calculateBasketTotal(List(Apple, Apple, Orange, Apple)) mustEqual BigDecimal("2.05")
+      shoppingCalculatorService.calculateBasketTotal(List(Apple, Apple, Orange, Apple)) mustEqual BigDecimal(2.05)
     }
   }
 }

@@ -2,6 +2,12 @@ name := "hmrc-shopping"
 
 mainClass := Some("main.service.Launch")
 
-libraryDependencies += "org.specs2" % "specs2_2.9.1" % "1.8"
+version := "0.0.0-SNAPSHOT"
 
-libraryDependencies += "org.mockito" % "mockito-core" % "1.10.19" % "test"
+scalaVersion := "2.11.6"
+
+libraryDependencies ++= Seq(
+  "org.specs2" %% "specs2-core" % "3.6.1" % Test
+)
+
+resolvers += "scalaz-bintray" at "http://dl.bintray.com/scalaz/releases"
