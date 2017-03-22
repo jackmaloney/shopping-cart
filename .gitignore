@@ -1,0 +1,9 @@
+*.iml
+.idea
+target
+.classpath
+.project
+logs/
+.history
+project/project
+project/target
